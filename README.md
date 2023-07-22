@@ -32,7 +32,10 @@ Each successful request would receive a response code of 200. For failures, ther
 
 # API Specifications
 
-## Create User: &nbsp;&nbsp;POST /user/registration
+## Create User
+```diff
+POST /user/registration
+```
 
 This create a new user with a unique username.
 
@@ -58,7 +61,11 @@ Sample response data:
 
 This will hash the user’s password (with salt of a round 10) before store the user in database. Then, it would return the current user on success.
 
-## Log in User: &nbsp;&nbsp; POST /user/login
+## Log in User
+
+```diff
+POST /user/login
+```
 
 This log in a user with a unique username and password.
 
@@ -84,7 +91,11 @@ Sample response data:
 This will verify if the user exists, and whether the password matches. On success, it would return the current user.
 
 
-## Retrieve stories of the current user: &nbsp;&nbsp;GET /user/retrieve_stories
+## Retrieve stories of the current user
+
+```diff 
+GET /user/retrieve_stories
+```
 
 List all the stories created by the user.
 
@@ -105,7 +116,11 @@ Sample response data:
 On success, this would return a list of Story objects.
 
 
-## Reset password: &nbsp;&nbsp;PATCH /user/reset_password
+## Reset password
+
+```diff
+PATCH /user/reset_password
+```
 
 Resets the password of the current user.
 
@@ -131,7 +146,11 @@ Sample response data:
 On success, this would return the current user, with password changed.
 
 
-## Log out: POST &nbsp;&nbsp;/user/logout
+## Log out
+
+```diff
+POST diff/user/logout
+```
 
 Log out the user. For simplicity, this won’t do anything, but in real case, if we use JWT, ask the frontend to remove the JWT from client side, or add the current JWT to an expire list in here. If use sessions, expire the session.
 
@@ -150,7 +169,11 @@ Sample response data:
 
 On success, this would return a message “Log-out succeeded.”.
 
-## Delete: &nbsp;&nbsp;DELETE /user/delete
+## Delete
+
+```diff
+DELETE /user/delete
+```
 
 Delete the user. Recursively remove all data associated with this user as well. The user would be looking like “vanished” and leave no trace after this request.
 
@@ -169,7 +192,11 @@ Sample response data:
 
 On success, this would return a message "User and corresponding data successfully deleted.”
 
-## Add story: &nbsp;&nbsp;POST /story/add
+## Add story
+
+```diff
+POST /story/add
+```
 
 Add a new story. 
 
@@ -197,7 +224,11 @@ Sample response data:
 On success, this would return a Story object.
 
 
-## Retrieve related comments: &nbsp;&nbsp;GET /story/retrieve_comments
+## Retrieve related comments
+
+```diff
+GET /story/retrieve_comments
+```
 
 List all the comments of the story.
 
@@ -216,7 +247,11 @@ Sample response data:
 
 On success, this would return a list of Comment objects.
 
-## Delete a story: &nbsp;&nbsp;DELETE /story/delete
+## Delete a story
+
+```diff
+DELETE /story/delete
+```
 
 Delete the story and all the corresponding comments.
 
@@ -236,7 +271,11 @@ Sample response data:
 On success, this would return a message "Story successfully deleted.”
 
 
-## Add a comment: &nbsp;&nbsp;DELETE /comment/add
+## Add a comment
+
+```diff
+DELETE /comment/add
+```
 
 Add a comment to a specific story, along with the author of the comment.
 
@@ -265,7 +304,11 @@ Sample response data:
 On success, this would return a Comment object.
 
 
-## Delete a comment: &nbsp;&nbsp;DELETE /comment/delete
+## Delete a comment
+
+```diff
+DELETE /comment/delete
+```
 
 Request body:
 ```
