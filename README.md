@@ -169,7 +169,7 @@ Sample response data:
 
 On success, this would return a message “Log-out succeeded.”.
 
-## Delete
+## Delete User
 
 ```diff
 DELETE /user/delete
